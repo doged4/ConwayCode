@@ -32,10 +32,13 @@ Each cell with three neighbors becomes populated.
 }
 
 void draw(){
- // background(0,0,0);
-  //main.display();
+  background(0,0,0);
+  main.display();
 }
 
 void keyPressed(){
     main.update();
+    if (key == 'b'){
+       MainSquares.removeAll(MainSquares);
+    }
 }

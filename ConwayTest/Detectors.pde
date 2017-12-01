@@ -31,7 +31,7 @@ class Detectors {
    }
    */
   void next(){
-    if ((this.surrounding > 1)||(this.surrounding < 4)){
+    if ((this.surrounding == 3) || (this.surrounding == 2 && inside)){
         MainSquares.add(new Square(this.x,this.y));
     } 
        

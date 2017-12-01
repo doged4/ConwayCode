@@ -45,16 +45,19 @@ void firstDo(){
     //for(float i = 0; i < 600; i+=10){
     //  MainSquares.add(new Square(i,i));
     //}
-    for(float i = 0; i < 60; i++){
-      MainSquares.add(new Square(i,i));
-    }
+ //   for(float i = 0; i < 60; i++){
+   //   MainSquares.add(new Square(i,i));
+    //}
     /* for(float i = 0; i < 60; i++){
         for(float j = 0; j < 60; j++){
           MainSquares.add(new Square(i,j));
         }
     }*/
-    
-    
+    for(float i = 0; i < 60; i++){
+        for(float j = 0; j < 60; j++){
+          Locations.add(new Detectors(i,j));
+        }
+    }
      glider(6,1);
   }
 
