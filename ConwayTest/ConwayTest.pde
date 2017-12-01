@@ -1,7 +1,10 @@
 Square test = new Square(0,0);
 MainDisplayer main = new MainDisplayer();
 ArrayList<Square> MainSquares = new ArrayList<Square>(); 
-ArrayList<Integer> Locations = new  ArrayList<Integer>();
+//ArrayList<Integer> Locations = new  ArrayList<Integer>();
+ArrayList<Detectors> Locations = new  ArrayList<Detectors>();
+
+
 
 
 void setup(){

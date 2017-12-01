@@ -6,9 +6,19 @@ class MainDisplayer {
     
   }
   void update(){
-     for(Square square: MainSquares){
-      square.update();
-    }
+  //   for(Square square: MainSquares){
+  //    square.update();
+  //  }
+  
+    for(Detectors detector: Locations){
+        detector.update();
+     }
+ 
+    MainSquares.removeAll(MainSquares);
+    
+     for(Detectors detector: Locations){
+        detector.next();
+     }
     
   }
   

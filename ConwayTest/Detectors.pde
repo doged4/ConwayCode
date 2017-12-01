@@ -24,10 +24,18 @@ class Detectors {
               }
           }
     }
+ }
  /*   
    if (surrounding == 3){
      MainSquares.add(new Square(this.x,this.y));
    }
    */
- }
+  void next(){
+    if ((this.surrounding > 1)||(this.surrounding < 4)){
+        MainSquares.add(new Square(this.x,this.y));
+    } 
+       
+  }//else{
+    
+  //}
 }
