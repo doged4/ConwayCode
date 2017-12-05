@@ -12,13 +12,14 @@ class Detectors {
  }
  
  void update(){
+   this.inside = false;
    this.surrounding = 0;
     for(Square square: MainSquares){
        if ((square.x > this.x - 2)&&(square.x < this.x + 2)&&
           (square.y > this.y - 2)&&(square.y < this.y + 2)){
           if((square.x == this.x)
               && (square.y == this.y)){
-                inside = true;
+                this.inside = true;
               } else {
                 this.surrounding += 1;
               }
