@@ -98,6 +98,19 @@ void gliderGun(float _x, float _y){
 
 
 }
+
+void acorn(float _x,float _y){
+      MainSquares.add(new Square(_x,_y+2));
+      MainSquares.add(new Square(_x+1,_y));
+      MainSquares.add(new Square(_x+1,_y+2));
+      MainSquares.add(new Square(_x+3,_y+1));
+      MainSquares.add(new Square(_x+4,_y+2));
+      MainSquares.add(new Square(_x+5,_y+2));
+      MainSquares.add(new Square(_x+6,_y+2));
+
+}
+
+
 void firstDo(){
     //for(float i = 0; i < 600; i+=10){
     //  MainSquares.add(new Square(i,i));
@@ -122,11 +135,16 @@ void firstDo(){
           Locations.add(new Detectors(i,j));
         }
     }
+       acorn(30,30);
 
     
     
-     gliderGun(6,20);
-  }
+     //gliderGun(6,20);
+  // for(float i = 1; i < 78; i++){
+  //        MainSquares.add(new Square(i,40));
+  //  }
+  //}
 
 
+}
 }
