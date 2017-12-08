@@ -18,7 +18,10 @@ class MainDisplayer {
      }
     
   }
-  
+  void addSquare(float xInp, float yInp){
+      MainSquares.add(new Square(xInp,yInp));
+    
+  }
   void display(){
     for(Square square: MainSquares){
       square.display();
@@ -109,16 +112,16 @@ void firstDo(){
     }*/
     MainSquares.removeAll(MainSquares);
     Locations.removeAll(Locations);
-    for(float i = 0; i < 60; i++){
-        for(float j = 0; j < 60; j++){
-          Locations.add(new Detectors(i,j));
-        }
-    }
-    //for(float i = 0; i < scale; i++){
-    //    for(float j = 0; j < scale; j++){
+    //for(float i = 0; i < 60; i++){
+    //    for(float j = 0; j < 60; j++){
     //      Locations.add(new Detectors(i,j));
     //    }
     //}
+    for(float i = 0; i < scale; i++){
+        for(float j = 0; j < scale; j++){
+          Locations.add(new Detectors(i,j));
+        }
+    }
 
     
     

@@ -4,7 +4,7 @@ ArrayList<Square> MainSquares = new ArrayList<Square>();
 //ArrayList<Integer> Locations = new  ArrayList<Integer>();
 ArrayList<Detectors> Locations = new  ArrayList<Detectors>();
 ArrayList<Square> visibleSquares = new ArrayList<Square>(); 
-final int scale = 60;
+final int scale = 100; 
 
 
 
@@ -15,18 +15,18 @@ void setup(){
   System.out.println("INIT");
   main.firstDo();
   main.display();
-   for(float i = 0; i < 60; i++){
-        for(float j = 0; j < 60; j++){
+   //for(float i = 0; i < 60; i++){
+   //     for(float j = 0; j < 60; j++){
+   //       visibleSquares.add(new Square(i,j));
+   //     }
+   // }
+
+  
+     for(float i = 0; i < scale; i++){
+        for(float j = 0; j < scale; j++){
           visibleSquares.add(new Square(i,j));
         }
     }
-
-  
-    // for(float i = 0; i < scale; i++){
-    //    for(float j = 0; j < scale; j++){
-    //      visibleSquares.add(new Square(i,j));
-    //    }
-    //}
 
   
   
@@ -58,10 +58,33 @@ void draw(){
   main.display();
 
 }
+boolean squareIn(float x, float y){
+    for(Square square: MainSquares){
+          if((square.x == x)
+              && (square.y == y)){
+                return true;
+              }
+     }
+     return false;
+}
 
+void mouseClicked(){
+
+
+  //if (squareIn((mouseX -(mouseX % (600/scale)))*scale/600,
+                   //(mouseY -(mouseY % (600/scale)))*scale/600)){
+                     
+    main.addSquare((mouseX -(mouseX % (600/scale)))*scale/600,
+                   (mouseY -(mouseY % (600/scale)))*scale/600);
+  //}
+  println("broken");
+  println(str(mouseX -(mouseX % (600/scale))) + ", " + str(mouseY -(mouseY % (600/scale))));
+  
+}
 void keyPressed(){
     main.update();
     if (key == 'b'){
       main.firstDo();
      }
+     println(squareIn(1,1));
 }

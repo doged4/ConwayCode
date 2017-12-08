@@ -8,9 +8,9 @@ class Square{
   
   protected void display(){
     //rect(this.x,this.y,10,10);
-      rect(this.x*10,this.y*10,10,10);
+      //rect(this.x*10,this.y*10,10,10);
       
-      //rect(this.x*10,this.y*10,600/scale,600/scale);
+      rect(600*this.x/scale, 600*this.y/scale, 600/scale, 600/scale);
 
 }
   
