@@ -1,5 +1,4 @@
 class Detectors {
-  
   float x,y;
   int surrounding;
   boolean inside = false;
@@ -8,35 +7,27 @@ class Detectors {
    this.x = _x;
    this.y = _y;
    this.surrounding = 0;
- 
  }
  
  void update(){
    this.inside = false;
    this.surrounding = 0;
-    for(Square square: MainSquares){
-       if ((square.x > this.x - 2)&&(square.x < this.x + 2)&&
-          (square.y > this.y - 2)&&(square.y < this.y + 2)){
-          if((square.x == this.x)
-              && (square.y == this.y)){
-                this.inside = true;
-              } else {
-                this.surrounding += 1;
-              }
-          }
-    }
- }
- /*   
-   if (surrounding == 3){
-     MainSquares.add(new Square(this.x,this.y));
+   for(Square square: MainSquares){
+     if ((square.x > this.x - 2)&&(square.x < this.x + 2)&&
+         (square.y > this.y - 2)&&(square.y < this.y + 2)){
+       if((square.x == this.x)
+        && (square.y == this.y))
+         this.inside = true;
+       } else {
+         this.surrounding += 1;
+       }
+     }
    }
-   */
+ }
+
   void next(){
     if ((this.surrounding == 3) || (this.surrounding == 2 && inside)){
         MainSquares.add(new Square(this.x,this.y));
-    } 
-       
-  }//else{
-    
-  //}
+    }   
+  }
 }
