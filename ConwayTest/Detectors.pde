@@ -9,22 +9,55 @@ class Detectors {
    this.surrounding = 0;
  }
  
+ int betterMod(float num, float modder){
+   return int(((num % modder)+ modder) % modder);
+ }
+ 
+ 
  void update(){
    this.inside = false;
    this.surrounding = 0;
    for(Square square: MainSquares){
-     if ((square.x > this.x - 2)&&(square.x < this.x + 2)&&
-         (square.y > this.y - 2)&&(square.y < this.y + 2)){
-       if((square.x == this.x)
-        && (square.y == this.y))
-         this.inside = true;
-       } else {
-         this.surrounding += 1;
-       }
-     }
-   }
- }
+      if (((square.x == betterMod(this.x - 1, scale))||
+        (square.x == this.x)||
+        (square.x == betterMod(this.x + 1, scale)))&&
+        ((square.y == betterMod(this.y - 1, scale))||
+        (square.y == this.y)||
+        (square.y == betterMod(this.y + 1, scale)))){
+         if ((square.x == this.x) && (square.y == this.y)){
+           this.inside = true;
+         } else{
+           this.surrounding += 1;
+         }
+        }
 
+ //if (((square.x == this.x - 1)||
+ //  (square.x == this.x)||
+ //  (square.x == this.x + 1))&&
+ //  ((square.y == this.y - 1)||
+ //  (square.y == this.y)||
+ //  (square.y == this.y + 1))){
+ //  if ((square.x == this.x) && (square.y == this.y)){
+ //    this.inside = true;
+ //  } else{
+ //     this.surrounding += 1;
+ //  } 
+ 
+ //}
+
+//other\/\/
+     //if ((((square.x == betterMod(this.x - 1, scale))||
+     //        (square.x <= betterMod(this.x + 1, scale))))&&
+     //    (((square.x == betterMod(this.y - 1, scale))||
+     //        (square.x <= betterMod(this.y + 1, scale))))){
+     //        this.surrounding += 1;
+     //  }else if ((square.x == this.x) && (square.y == this.y)){
+     //    this.inside = true;
+     //  }
+ //}
+//other/\/\
+ }
+ }
   void next(){
     if ((this.surrounding == 3) || (this.surrounding == 2 && inside)){
         MainSquares.add(new Square(this.x,this.y));
