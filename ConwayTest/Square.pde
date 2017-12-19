@@ -1,4 +1,4 @@
-class Square{
+class Square {
   float x,y;
   
   Square(float _x, float _y){

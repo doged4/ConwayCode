@@ -26,6 +26,7 @@ void draw(){
   main.display();
 }
 
+//Not necessary \/\/\/\/\/\/
 boolean squareIn(float x, float y){
   for(Square square: MainSquares){
     if((square.x == x)
@@ -35,6 +36,7 @@ boolean squareIn(float x, float y){
   }
   return false;
 }
+//Not necessary yet /\/\/\/\/\/\
 
 void mouseClicked(){      
   main.addSquare((mouseX -(mouseX % (600/scale)))*scale/600,
@@ -43,7 +45,10 @@ void mouseClicked(){
 
 void keyPressed(){
   main.update();
-  if (key == 'b'){
+  if (key == 'r'){
     main.firstDo();
   }
+  if (key == 'e'){
+    MainSquares.removeAll(MainSquares);
+  }  
 }
